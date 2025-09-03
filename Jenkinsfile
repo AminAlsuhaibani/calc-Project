@@ -39,22 +39,18 @@ pipeline {
 	}
 
 	post {
-        success {
-            emailext(
-                to: 'amunh3333@gmail.com',
-                subject: "Build Success: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                body: "Good news! The build succeeded.\nCheck details: ${env.BUILD_URL}",
-                attachLog: true
-            )
-        }
-        failure {
-            emailext(
-                to: 'amunh3333@gmail.com',
-                subject: "Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                body: "The build failed.\nCheck details: ${env.BUILD_URL}",
-                attachLog: true
+    		always {
+    			cleanWs()
+    		}
+    		success {
+    			echo 'Pipeline completed successfully! Test2    '
+    			mail to: 'amunh3333@gmail.com',
+                subject: "Zo6: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                body: "Good news! The build succeeded.\nCheck the build details here: ${env.BUILD_URL}"
 
-            )
-        }
-    }
+    		}
+    		failure {
+    			echo 'Pipeline failed!'
+    		}
+    	}
 }
