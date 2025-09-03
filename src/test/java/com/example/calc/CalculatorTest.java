@@ -1,5 +1,6 @@
 package com.example.calc;
 
+import com.example.calc.controller.CalculatorController;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -8,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest(classes = CalcApplication.class)
 public class CalculatorTest {
-    CalcApplication controller = new CalcApplication();
+    CalculatorController controller = new CalculatorController();
 
     @Test
     public void testAddPositive() {

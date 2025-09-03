@@ -1,25 +1,11 @@
 package com.example.calc;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@RestController
-@RequestMapping
+@SpringBootApplication
 public class CalcApplication {
-    @PostMapping("/add")
-    public Integer add(@RequestParam Integer a, @RequestParam Integer b) {
-        return a+b;
-    }
-
-    @PostMapping("/sub")
-    public Integer sub(@RequestParam Integer a, @RequestParam Integer b) {
-        return a-b;
-    }
-
-    @PostMapping("/div")
-    public Integer div(@RequestParam Integer a, @RequestParam Integer b) {
-        return a/b;
+    public static void main(String[] args) {
+        SpringApplication.run(CalcApplication.class, args);
     }
 }
