@@ -1,11 +1,12 @@
 package com.example.calc;
 
 import org.junit.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-
+@SpringBootTest(classes = CalcApplication.class)
 public class CalculatorTest {
     CalcApplication controller = new CalcApplication();
 
@@ -35,9 +36,7 @@ public class CalculatorTest {
 
     @Test
     public void testDivisionByZero() {
-        assertThrows(ArithmeticException.class, () -> {
-            controller.div(1, 0);
-        });
+        assertThrows(ArithmeticException.class, () -> controller.div(1, 0));
     }
 
     @Test
