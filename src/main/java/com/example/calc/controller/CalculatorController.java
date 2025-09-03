@@ -21,6 +21,7 @@ public class CalculatorController {
         return a - b;
     }
 
+    //for div two numbers
     @PostMapping("/div")
     public Integer div(@RequestParam Integer a, @RequestParam Integer b) {
         return a / b;
