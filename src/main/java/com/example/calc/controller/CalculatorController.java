@@ -15,6 +15,7 @@ public class CalculatorController {
         return a + b;
     }
 
+    //for subtracting two numbers
     @PostMapping("/sub")
     public Integer sub(@RequestParam Integer a, @RequestParam Integer b) {
         return a - b;
