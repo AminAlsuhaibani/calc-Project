@@ -41,20 +41,16 @@ pipeline {
 	post {
         success {
             emailext(
-                to: 'amunh3333@gmail.com',
-                subject: "✅ SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                body: "Build succeeded! Check details: ${env.BUILD_URL}",
-                smtpUsername: 'aminalsuhaibani@gmail.com',
-                smtpPassword: credentials('email-creds')
+                to: 'team@example.com',
+                subject: "Build Success: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: "Good news! The build succeeded.\nCheck details: ${env.BUILD_URL}"
             )
         }
         failure {
             emailext(
-                to: 'amunh3333@gmail.com',
-                subject: "❌ FAILURE: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                body: "Build failed! Check logs: ${env.BUILD_URL}",
-                smtpUsername: 'aminalsuhaibani@gmail.com',
-                smtpPassword: credentials('email-creds')
+                to: 'team@example.com',
+                subject: "Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: "The build failed.\nCheck details: ${env.BUILD_URL}"
             )
         }
     }
