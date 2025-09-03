@@ -10,7 +10,7 @@ pipeline {
 		stage('Checkout') {
 			steps {
 				git branch: 'main',
-				url: 'https://github.com/AminAlsuhaibani/cal.git'
+				url: 'https://github.com/AminAlsuhaibani/calc-Project.git'
 			}
 		}
 
